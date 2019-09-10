@@ -1,3 +1,3 @@
-# HibernateServiceAndDAOLayer
+# MergeAndUpdateExample
 
-Hibernate Example with Service and DAO layer
+MergeAndUpdateExample

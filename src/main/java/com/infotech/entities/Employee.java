@@ -18,7 +18,7 @@ public class Employee {
     @Column(name="employee_name",length=200,nullable=false)
     private String employeeName;
 
-    @Column(name="email")
+    @Column(name="email",length=60,unique=true)
     private String email;
 
     @Column(name="date_of_joining")
@@ -26,10 +26,6 @@ public class Employee {
 
     @Column(name="salary")
     private Double salary;
-
-    @OneToOne(cascade={CascadeType.PERSIST,CascadeType.REMOVE})
-    @JoinColumn(name="address_id")
-    private Address address;
 
     public Integer getEmployeeId() {
         return employeeId;
@@ -62,12 +58,6 @@ public class Employee {
         this.salary = salary;
     }
 
-    public void setAddress(Address address) {
-        this.address = address;
-    }
-    public Address getAddress() {
-        return address;
-    }
     @Override
     public String toString() {
         return "Employee [employeeId=" + employeeId + ", employeeName=" + employeeName + ", email=" + email + ", doj="
